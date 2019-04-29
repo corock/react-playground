@@ -1,9 +1,15 @@
 import React from 'react';
-import AskShareModal from 'components/modal/AskShareModal';
+import { Switch, Route } from 'react-router-dom';
+import { NoteMainPage, ModalTestPage } from 'pages';
 
 const App = () => {
     return (
-        <AskShareModal />
+        <div>
+            <Switch>
+                <Route exact path="/" component={NoteMainPage} />
+                <Route path="/modal" component={ModalTestPage} />
+            </Switch>
+        </div>        
     );
 };
 

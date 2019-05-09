@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const styles = theme => ({
   layout: {
@@ -96,23 +97,6 @@ const featuredPosts = [
   }
 ];
 
-const archives = [
-  "March 2020",
-  "February 2020",
-  "January 2020",
-  "December 2019",
-  "November 2019",
-  "October 2019",
-  "September 2019",
-  "August 2019",
-  "July 2019",
-  "June 2019",
-  "May 2019",
-  "April 2019"
-];
-
-const social = ["GitHub", "Twitter", "Facebook"];
-
 function NoteMainPage(props) {
   const { classes } = props;
 
@@ -161,15 +145,9 @@ function NoteMainPage(props) {
                   <div className={classes.cardDetails}>
                     <CardContent>
                       <Typography component="h2" variant="h5">
-                        <i class="material-icons md-48 wespaceColor">alarm</i>&nbsp;
                         {post.title}
-                        <Icon>asdasd</Icon>
                       </Typography>
-                      <Typography
-                        variant="subtitle1"
-                        color="textSecondary"
-                        align="right"
-                      >
+                      <Typography      variant="subtitle1" color="textSecondary"    align="right">
                         {post.date}
                       </Typography>
                       <br />

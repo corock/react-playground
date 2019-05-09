@@ -1,12 +1,11 @@
 import React from 'react';
-import AskShareModal from 'components/modal/AskShareModal';
+import PageTemplate from 'components/common/PageTemplate';
+import AskShareModalContainer from 'containers/modal/AskShareModalContainer';
 
 const ModalTestPage = () => {
     return (
-        <div>
-            <AskShareModal />
-        </div>
-    )
+        <AskShareModalContainer />
+    );
 };
 
 export default ModalTestPage;

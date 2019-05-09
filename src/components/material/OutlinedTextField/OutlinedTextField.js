@@ -6,24 +6,35 @@ import TextField from "@material-ui/core/TextField";
 const styles = theme => ({
     container: {
         display: "flex",
-        flexWrap: "wrap"
+        flexWrap: "wrap",
+        marginTop: "-16px"
     },
     textField: {
         width: '100%',
+        fontWeight: 'bold',
         // marginLeft: theme.spacing.unit,
         // marginRight: theme.spacing.unit
+        // '&$cssFocused': {
+        //     color: "#1C90FB"
+        // },
     },
     dense: {
         marginTop: 16
     },
     menu: {
         width: 200
+    },
+    notchedOutline: {
+        borderColor: "#1C90FB !important"
+    },
+    placeholderText: {
+        fontWeight: "bold"
     }
 });
 
-class OutlinedTextFields extends React.Component {
+class OutlinedTextFields extends Component {
     state = {
-        name: "WE"
+        name: "이름을 입력하세요"
     };
 
     handleChange = name => event => {
@@ -40,9 +51,15 @@ class OutlinedTextFields extends React.Component {
                 <TextField
                     id="outlined-bare"
                     className={classes.textField}
-                    placeholder="직원명 입력"
+                    placeholderStyle={classes.placeholderText}
+                    placeholder={this.state.name}
                     margin="normal"
                     variant="outlined"
+                    InputProps={{
+                        classes: {
+                            notchedOutline: classes.notchedOutline
+                        }
+                    }}
                 />
             </form>
         );

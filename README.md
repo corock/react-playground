@@ -1,11 +1,9 @@
 # React Playground
-
 React.js 기반의 컴포넌트를 지지고 볶아 보는 공간입니다.
 
 
 
 ## Directory Structure
-
 디렉토리 구조는 다음과 같습니다.
 
 ```
@@ -30,10 +28,18 @@ src
 ```
 
 
+### Installing
+```shell
+yarn add react-quill
+# npm i react-quill
+```
 
 ## Usage
+```shell
+yarn install
+```
 
-### Installing Package
+
 
 다음과 같은 오류가 발생합니다.
 

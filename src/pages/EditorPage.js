@@ -16,6 +16,7 @@ class EditorPage extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+    // contents
     handleChange(value) {
         this.setState({ text: value });
     }

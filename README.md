@@ -97,3 +97,71 @@ use: getStyleLoaders({
 @import 'utils.scss';
 ```
 
+
+## react-select
+### Installation and usage
+The easiest way to use **react-select** is to install it from npm and build it into your app with Webpack.
+```shell
+yarn add react-select
+```
+
+Then use it in your app:
+```javascript
+import React from 'react';
+import Select from 'react-select';
+
+// Sample data
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+];
+
+// Component in select component
+const CustomClearText = () => '모두 삭제';
+const ClearIndicator = (props) => {
+  const { children = <CustomClearText/>, getStyles, innerProps: { ref, ...restInnerProps } } = props;
+  return (
+    <div {...restInnerProps} ref={ref} style={getStyles('clearIndicator', props)}>
+      <div style={{ padding: '0px 5px' }}>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+// Component styles in select component
+const ClearIndicatorStyles = (base, state) => ({
+  ...base,
+  cursor: 'pointer',
+  color: state.isFocused ? 'blue' : 'black',
+});
+
+class ReactSelectPage extends React.Component {
+  state = {
+    selectedOption: null,
+  }
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
+  }
+  render() {
+    const { selectedOption } = this.state;
+
+    return (
+      <Select
+        value={selectedOption}
+        onChange={this.handleChange}
+        options={options}
+        placeholder='dasdda'
+        closeMenuOnSelect={false}
+        components={{ ClearIndicator }}   // embedded
+        styles={{ clearIndicator: ClearIndicatorStyles }}
+        isMulti
+      />
+    );
+  }
+}
+
+export default ReactSelectPage;
+```

@@ -54,7 +54,7 @@
     "rc-select": "^9.1.2",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.0",
-    "react-dev-utils": "^9.0.0",
+    "react-dev-utils": "^11.0.4",
     "react-disposable-modal": "^0.4.0",
     "react-dom": "^16.8.6",
     "react-quill": "^1.3.3",
